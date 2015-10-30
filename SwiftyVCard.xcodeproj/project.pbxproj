@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		44FB07651BE2248600C1A514 /* SwiftyVCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FB07641BE2248600C1A514 /* SwiftyVCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44FB07871BE2299C00C1A514 /* VCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB07861BE2299C00C1A514 /* VCard.swift */; };
+		44FB07891BE2320C00C1A514 /* VCardProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB07881BE2320C00C1A514 /* VCardProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		44FB07611BE2248600C1A514 /* SwiftyVCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyVCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FB07641BE2248600C1A514 /* SwiftyVCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyVCard.h; sourceTree = "<group>"; };
 		44FB07661BE2248600C1A514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FB07861BE2299C00C1A514 /* VCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCard.swift; sourceTree = "<group>"; };
+		44FB07881BE2320C00C1A514 /* VCardProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCardProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			children = (
 				44FB07641BE2248600C1A514 /* SwiftyVCard.h */,
 				44FB07661BE2248600C1A514 /* Info.plist */,
+				44FB07861BE2299C00C1A514 /* VCard.swift */,
+				44FB07881BE2320C00C1A514 /* VCardProperty.swift */,
 			);
 			path = SwiftyVCard;
 			sourceTree = "<group>";
@@ -130,6 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FB07871BE2299C00C1A514 /* VCard.swift in Sources */,
+				44FB07891BE2320C00C1A514 /* VCardProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +236,7 @@
 		44FB076A1BE2248600C1A514 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -240,12 +249,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tech.grg.SwiftyVCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		44FB076B1BE2248600C1A514 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

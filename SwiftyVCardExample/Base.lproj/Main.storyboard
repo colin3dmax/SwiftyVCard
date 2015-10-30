@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftyVCardExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WCG-rq-riq">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7B-jf-dBZ">
+                                <rect key="frame" x="0.0" y="567" width="600" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKW-Wp-lIN">
+                                        <rect key="frame" x="8" y="8" width="584" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.98555090000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JKW-Wp-lIN" firstAttribute="leading" secondItem="o7B-jf-dBZ" secondAttribute="leading" constant="8" id="1KP-2u-poj"/>
+                                    <constraint firstItem="JKW-Wp-lIN" firstAttribute="top" secondItem="o7B-jf-dBZ" secondAttribute="top" constant="8" id="Q2P-ym-WeW"/>
+                                    <constraint firstAttribute="bottom" secondItem="JKW-Wp-lIN" secondAttribute="bottom" constant="8" id="fAE-KZ-5PB"/>
+                                    <constraint firstAttribute="trailing" secondItem="JKW-Wp-lIN" secondAttribute="trailing" constant="8" id="z5I-ro-Vle"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WCG-rq-riq" secondAttribute="bottom" id="2G2-NL-fT7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o7B-jf-dBZ" secondAttribute="bottom" id="4BI-WX-NXv"/>
+                            <constraint firstAttribute="trailing" secondItem="o7B-jf-dBZ" secondAttribute="trailing" id="Bde-fo-pmu"/>
+                            <constraint firstItem="WCG-rq-riq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PW0-7l-hRV"/>
+                            <constraint firstItem="o7B-jf-dBZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VUD-5l-GH1"/>
+                            <constraint firstAttribute="trailing" secondItem="WCG-rq-riq" secondAttribute="trailing" id="nfZ-H6-RLC"/>
+                            <constraint firstItem="WCG-rq-riq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="r3Q-8L-AcT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="JKW-Wp-lIN" id="z7n-BP-Mnm"/>
+                        <outlet property="imageView" destination="WCG-rq-riq" id="Xy6-ei-qmm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="136"/>
+        </scene>
+    </scenes>
+</document>
