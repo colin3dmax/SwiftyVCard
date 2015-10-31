@@ -22,9 +22,12 @@ class ViewController: UIViewController {
     let fileUrl = NSBundle.mainBundle().URLForResource("user4", withExtension: "vcard")!
     let vCardString = try! String(contentsOfURL: fileUrl)
     
+    
     user = VCard(vCardString: vCardString)
     imageView.image = user.logo
     descriptionLabel.text = user.description
+    let vCardRepr = user.vCardRepresentation
+    print(vCardRepr)
   }
 }
 

@@ -27,11 +27,82 @@ public class VCard {
   public var linkedIn = ""
   public var twitter = ""
   
-  public init?(vCardString: String) {
-    parse(vCardString)
+  public var vCardRepresentation: String {
+    var result =  "BEGIN:VCARD\r\n" +
+    "VERSION:4.0\r\n"
+    
+    if !firstName.isEmpty || !secondName.isEmpty || !lastName.isEmpty {
+      result +=   "\(VCardProperty.N.rawValue):\(lastName);\(firstName);\(secondName);\r\n"
+    }
+    
+    if photo != nil {
+      if let base64Data = UIImagePNGRepresentation(photo)?.base64EncodedDataWithOptions([]) {
+        if let base64String = String(data: base64Data, encoding: NSUTF8StringEncoding) {
+          result += "\(VCardProperty.PHOTO.rawValue):data:image/png;base64,\(base64String)"
+        }
+      }
+    }
+    
+    if logo != nil {
+      if let base64Data = UIImagePNGRepresentation(logo)?.base64EncodedDataWithOptions([]) {
+        if let base64String = String(data: base64Data, encoding: NSUTF8StringEncoding) {
+          result += "\(VCardProperty.LOGO.rawValue):data:image/png;base64,\(base64String)\r\n"
+        }
+      }
+    }
+    
+    if !position.isEmpty {
+      result += "\(VCardProperty.TITLE.rawValue):\(position)\r\n"
+    }
+    
+    if !company.isEmpty {
+      result += "\(VCardProperty.ORG.rawValue):\(company)\r\n"
+    }
+    
+    if !website.isEmpty {
+      result += "\(VCardProperty.URL.rawValue):\(website)\r\n"
+    }
+    
+    if !phoneNumber.isEmpty {
+      result += "\(VCardProperty.TEL.rawValue):\(phoneNumber)\r\n"
+    }
+    
+    if !address.isEmpty {
+      result += "\(VCardProperty.ADR.rawValue):\(address);;;;;\r\n"
+    }
+    
+    if !facebook.isEmpty {
+      result += "\(VCardProperty.FACEBOOK.rawValue):\(facebook)\r\n"
+    }
+    
+    if !skype.isEmpty {
+      result += "\(VCardProperty.SKYPE.rawValue):\(skype)\r\n"
+    }
+    
+    if !instagram.isEmpty {
+      result += "\(VCardProperty.INSTAGRAM.rawValue):\(instagram)\r\n"
+    }
+    
+    if !linkedIn.isEmpty {
+      result += "\(VCardProperty.LINKEDIN.rawValue):\(linkedIn)\r\n"
+    }
+    
+    if !twitter.isEmpty {
+      result += "\(VCardProperty.TWITTER.rawValue):\(twitter)\r\n"
+    }
+    
+    result += "END:VCARD\r\n"
+    
+    return result
   }
   
-  private func parse(string: String) {
+  public init() {}
+  
+  public init(vCardString: String) {
+    fillFromVCardString(vCardString)
+  }
+  
+  func fillFromVCardString(string: String) {
     let preparedString = string.stringByReplacingOccurrencesOfString("\r\n ", withString: "").stringByReplacingOccurrencesOfString("\r\n\t", withString: "").stringByReplacingOccurrencesOfString("\n ", withString: "").stringByReplacingOccurrencesOfString("\n\t", withString: "")
     
     scanner = NSScanner(string: preparedString)
@@ -203,21 +274,22 @@ public class VCard {
   private func scanEnd() -> Bool {
     return scanner.scanString("END:VCARD", intoString: nil)
   }
+  
 }
 
 extension VCard: CustomStringConvertible {
   public var description: String {
     let result =  "firstName: \(firstName)\n" +
-    "secondName: \(secondName)\n" +
-    "lastName: \(lastName)\n" +
-    "position: \(position)\n" +
-    "company: \(company)\n" +
-    "website: \(website)\n" +
-    "address: \(address)\n" +
-    "facebook: \(facebook)\n" +
-    "skype: \(skype)\n" +
-    "instagram: \(instagram)\n" +
-    "linkedIn: \(linkedIn)\n" +
+      "secondName: \(secondName)\n" +
+      "lastName: \(lastName)\n" +
+      "position: \(position)\n" +
+      "company: \(company)\n" +
+      "website: \(website)\n" +
+      "address: \(address)\n" +
+      "facebook: \(facebook)\n" +
+      "skype: \(skype)\n" +
+      "instagram: \(instagram)\n" +
+      "linkedIn: \(linkedIn)\n" +
     "twitter: \(twitter)"
     return result
   }
