@@ -13,6 +13,7 @@ public enum VCardProperty: String {
   case PHOTO
   case LOGO
   case TITLE
+  case EMAIL
   case ORG
   case URL
   case TEL

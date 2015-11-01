@@ -16,6 +16,7 @@ public class VCard {
   public var lastName = ""
   public var photo: UIImage!
   public var logo: UIImage!
+  public var eMail = ""
   public var position = ""
   public var company = ""
   public var website = ""
@@ -130,6 +131,9 @@ public class VCard {
       case .TITLE:
         parseTitleValue(value)
         
+      case .EMAIL:
+        parseEmailValue(value)
+        
       case .ORG:
         parseOrgValue(value)
         
@@ -229,6 +233,10 @@ public class VCard {
       print(error)
     }
     return nil
+  }
+  
+  private func parseEmailValue(value: String) {
+    eMail = value
   }
   
   private func parseTitleValue(value: String) {
